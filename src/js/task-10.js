@@ -7,12 +7,10 @@ const numberInputWindow = document.querySelector('div#controls > input');
 const createBoxButton = document.querySelector('button[data-create]');
 const destroyAllBoxButton = document.querySelector('button[data-destroy]');
 
-let boxSize = 20;
-
 createBoxButton.addEventListener('click', createBoxes);
 destroyAllBoxButton.addEventListener('click', destroyBoxes);
 
-
+let boxSize = 20;
 function createBoxes(amount) {
   amount = numberInputWindow.value;
   for (let i = 0; i < amount; i += 1){ 
@@ -27,6 +25,7 @@ function createBoxes(amount) {
 
 function destroyBoxes() {
   boxMother.innerHTML = '';
+  boxSize = 20;
 }
 
 
