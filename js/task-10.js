@@ -12,6 +12,7 @@ destroyAllBoxButton.addEventListener('click', destroyBoxes);
 
 let boxSize = 20;
 function createBoxes(amount) {
+  const arrBox = [];
   amount = numberInputWindow.value;
   for (let i = 0; i < amount; i += 1){ 
     boxSize += 10;
@@ -19,8 +20,9 @@ function createBoxes(amount) {
     newBox.style.width = `${boxSize}px`;
     newBox.style.height = `${boxSize}px`;
     newBox.style.backgroundColor = getRandomHexColor();
-    boxMother.appendChild(newBox);
+    arrBox.push(newBox);
   }
+  boxMother.append(...arrBox);
 }
 
 function destroyBoxes() {
